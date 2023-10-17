@@ -1,3 +1,15 @@
 {% extends 'pages/base.html'  %}
 
-{% block content %}Teste{% endblock %}
+{% block content %}
+
+
+{{ current_url() }} <br>
+{{ get_uri() }} <br>
+{{ base_path() }} <br>
+
+
+{{ full_url_for('teste') }}
+
+
+
+{% endblock %}
