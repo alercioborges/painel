@@ -25,6 +25,34 @@ $app->addRoutingMiddleware();
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+
+
+// Fetch DI Container
+$container = $app->getContainer();
+
+// Register Twig View helper
+$container['view'] = function ($c) {
+    $view = new \Slim\Views\Twig('path/to/templates');
+
+    // Instantiate and add Slim specific extension
+    $router = $c->get('router');
+    $uri = \Slim\Http\Uri::createFromEnvironment(new \Slim\Http\Environment($_SERVER));
+    $view->addExtension(new \Slim\Views\TwigExtension($router, $uri));
+
+    $assetManager = new Glazilla\TwigAsset\TwigAssetManagement([
+        'verion' => '1'
+    ]);
+    $assetManager->addPath('css', '/css');
+    $assetManager->addPath('img', '/images');
+    $assetManager->addPath('js', '/js');
+    $view->addExtension($assetManager->getAssetExtension());
+
+    return $view;
+};
+
+   
+
+
 require_once("routes/redirect.php");
 require_once("routes/home.php");
 

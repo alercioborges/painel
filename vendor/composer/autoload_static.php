@@ -4,15 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
+class ComposerStaticInit074b78696fa0bea8c91ad9d4f9d45786
 {
     public static $files = array (
-        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -26,6 +27,7 @@ class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Asset\\' => 24,
             'Slim\\Views\\' => 11,
             'Slim\\Psr7\\' => 10,
             'Slim\\' => 5,
@@ -37,10 +39,26 @@ class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
+        'L' => 
+        array (
+            'Laravel\\SerializableClosure\\' => 28,
+        ),
+        'I' => 
+        array (
+            'Invoker\\' => 8,
+        ),
+        'G' => 
+        array (
+            'Glazilla\\TwigAsset\\' => 19,
+        ),
         'F' => 
         array (
             'Fig\\Http\\Message\\' => 17,
             'FastRoute\\' => 10,
+        ),
+        'D' => 
+        array (
+            'DI\\' => 3,
         ),
         'C' => 
         array (
@@ -73,6 +91,10 @@ class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
         'Slim\\Views\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/twig-view/src',
@@ -103,6 +125,18 @@ class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Laravel\\SerializableClosure\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
+        ),
+        'Invoker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-di/invoker/src',
+        ),
+        'Glazilla\\TwigAsset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/glazilla/twig-asset/src',
+        ),
         'Fig\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/http-message-util/src',
@@ -110,6 +144,10 @@ class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'DI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-di/php-di/src',
         ),
         'Core\\' => 
         array (
@@ -135,9 +173,9 @@ class ComposerStaticInit17d95589d5229a1abf0c2330561b2a21
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit17d95589d5229a1abf0c2330561b2a21::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit17d95589d5229a1abf0c2330561b2a21::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit17d95589d5229a1abf0c2330561b2a21::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit074b78696fa0bea8c91ad9d4f9d45786::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit074b78696fa0bea8c91ad9d4f9d45786::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit074b78696fa0bea8c91ad9d4f9d45786::$classMap;
 
         }, null, ClassLoader::class);
     }
