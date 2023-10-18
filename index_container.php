@@ -31,30 +31,6 @@ $app->add(TwigMiddleware::createFromContainer($app));
 $app->setBasePath(Config::BASE_DIR);
 
 
-// Fetch DI Container
-$container = $app->getContainer();
-
-// Register Twig View helper
-$container = function ($c) {
-    $view = new \Slim\Views\Twig('src/Views/templates');
-
-    // Instantiate and add Slim specific extension
-    $router = $c->get('router');
-    $uri = \Slim\Http\Uri::createFromEnvironment(new \Slim\Http\Environment($_SERVER));
-    $view->addExtension(new \Slim\Views\TwigExtension($router, $uri));
-
-    $assetManager = new Glazilla\TwigAsset\TwigAssetManagement([
-        'verion' => '1'
-    ]);
-    $assetManager->addPath('css', '/css');
-    $assetManager->addPath('img', '/images');
-    $assetManager->addPath('js', '/js');
-    $view->addExtension($assetManager->getAssetExtension());
-
-    return $view;
-};
-
-
 // Define named route
 $app->get('/hello/{name}', function (Request $request, Response $response, $args) {
     return $this->get('view')->render($response, 'pages/profile.html', [
