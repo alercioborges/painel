@@ -5,7 +5,8 @@
         "twig/twig": "^3.0",
         "slim/twig-view": "^3.3",
         "glazilla/twig-asset": "^1.2",
-        "php-di/php-di": "^7.0"
+        "php-di/php-di": "^7.0",
+        "odan/twig-assets": "^3.3"
 
     },
 
