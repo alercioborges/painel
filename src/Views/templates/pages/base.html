@@ -1,6 +1,6 @@
 
-{% include 'partials/header.html' %}
+{% extends 'partials/header.html' %}
+
+{% block header %} {{ parent() }} {% endblock %}
 
 {% block content %}{% endblock %}
-
-{% include 'partials/footer.html' %}
